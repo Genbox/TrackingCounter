@@ -34,7 +34,7 @@ namespace TrackingCounter
                     {
                         cbDevices.Items.Add(new DeviceWrapper(captureDevice));
 
-                        string gateway = captureDevice.Interface.GatewayAddress.ToString();
+                        string gateway = captureDevice.Interface.GatewayAddress == null ? string.Empty : captureDevice.Interface.GatewayAddress.ToString();
                         if (!string.IsNullOrEmpty(gateway) && gateway != "0.0.0.0")
                             bestCandidate = counter;
 
