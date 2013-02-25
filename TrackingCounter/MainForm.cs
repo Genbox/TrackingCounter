@@ -19,34 +19,41 @@ namespace TrackingCounter
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CaptureDeviceList devices = CaptureDeviceList.Instance;
-
-            if (devices.Count >= 1)
+            try
             {
-                int bestCandidate = 0;
-                int counter = 0;
+                CaptureDeviceList devices = CaptureDeviceList.Instance;
 
-                foreach (WinPcapDevice captureDevice in devices)
+                if (devices.Count >= 1)
                 {
-                    if (captureDevice.Interface.Addresses.Count >= 1 && captureDevice.Loopback == false)
+                    int bestCandidate = 0;
+                    int counter = 0;
+
+                    foreach (WinPcapDevice captureDevice in devices)
                     {
-                        cbDevices.Items.Add(new DeviceWrapper(captureDevice));
+                        if (captureDevice.Interface.Addresses.Count >= 1 && captureDevice.Loopback == false)
+                        {
+                            cbDevices.Items.Add(new DeviceWrapper(captureDevice));
 
-                        string gateway = captureDevice.Interface.GatewayAddress == null ? string.Empty : captureDevice.Interface.GatewayAddress.ToString();
+                            string gateway = captureDevice.Interface.GatewayAddress == null ? string.Empty : captureDevice.Interface.GatewayAddress.ToString();
 
-                        if (!string.IsNullOrEmpty(gateway) && gateway != "0.0.0.0")
-                            bestCandidate = counter;
+                            if (!string.IsNullOrEmpty(gateway) && gateway != "0.0.0.0")
+                                bestCandidate = counter;
 
-                        counter++;
+                            counter++;
+                        }
+                    }
+
+                    if (cbDevices.Items.Count >= 1)
+                    {
+                        cbDevices.SelectedIndex = bestCandidate;
                     }
                 }
-
-                if (cbDevices.Items.Count >= 1)
-                {
-                    cbDevices.SelectedIndex = bestCandidate;
-                }
             }
-
+            catch (DllNotFoundException)
+            {
+                MessageBox.Show("WinPcap was not found. Make sure you have WinPcap installed before using this application.", "WinPcap not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
             _startDate = DateTime.Now;
         }
 
