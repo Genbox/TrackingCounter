@@ -9,4 +9,4 @@ More information: https://logning.bitbureauet.dk/
 ### Usage
 
 Just open the application, choose the net card you use for internet and watch the counter.
-You can download a compiled version here: https://github.com/Genbox/TrackingCounter/blob/master/Compiled/TrackingCounter.exe
+You can download a compiled version here: https://github.com/Genbox/TrackingCounter/raw/master/Compiled/TrackingCounter.exe
