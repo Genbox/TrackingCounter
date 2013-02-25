@@ -86,9 +86,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)..\Compiled\
-copy $(TargetDir)SharpPcap.dll $(ProjectDir)..\Compiled\
-copy $(TargetDir)PacketDotNet.dll $(ProjectDir)..\Compiled\</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)..\Dependencies\ILMerge.exe /targetplatform:v4 /out:"$(TargetDir)Tracking Counter 1.0.exe" $(TargetPath) $(TargetDir)SharpPcap.dll $(TargetDir)PacketDotNet.dll
+copy "$(TargetDir)Tracking Counter 1.0.exe" $(ProjectDir)..\Compiled\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
