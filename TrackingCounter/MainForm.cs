@@ -69,9 +69,16 @@ namespace TrackingCounter
         {
             if (_selectedDevice != null)
             {
-                _selectedDevice.OnPacketArrival -= SelectedDevice_OnPacketArrival;
-                _selectedDevice.StopCapture();
-                _selectedDevice.Close();
+                try
+                {
+                    _selectedDevice.OnPacketArrival -= SelectedDevice_OnPacketArrival;
+                    _selectedDevice.StopCapture();
+                    _selectedDevice.Close();
+                }
+                catch (Exception)
+                {
+                    //We ignore errors from closing down the capture.
+                }
             }
         }
 
@@ -118,7 +125,7 @@ namespace TrackingCounter
             notifyIcon1.Text = registrations.ToString() + " registrationer i dag";
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkMoreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://logning.bitbureauet.dk/");
         }

@@ -35,7 +35,7 @@
             this.lblTrackingCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkMoreInfo = new System.Windows.Forms.LinkLabel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
@@ -87,17 +87,17 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "gange i dag";
             // 
-            // linkLabel1
+            // linkMoreInfo
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(225, 129);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(51, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Mere info";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkMoreInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkMoreInfo.AutoSize = true;
+            this.linkMoreInfo.Location = new System.Drawing.Point(225, 129);
+            this.linkMoreInfo.Name = "linkMoreInfo";
+            this.linkMoreInfo.Size = new System.Drawing.Size(51, 13);
+            this.linkMoreInfo.TabIndex = 6;
+            this.linkMoreInfo.TabStop = true;
+            this.linkMoreInfo.Text = "Mere info";
+            this.linkMoreInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMoreInfo_LinkClicked);
             // 
             // notifyIcon1
             // 
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(288, 151);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkMoreInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTrackingCount);
@@ -136,7 +136,7 @@
         private System.Windows.Forms.Label lblTrackingCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkMoreInfo;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
