@@ -86,7 +86,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)..\Compiled\</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)..\Compiled\
+copy $(TargetDir)SharpPcap.dll $(ProjectDir)..\Compiled\
+copy $(TargetDir)PacketDotNet.dll $(ProjectDir)..\Compiled\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
