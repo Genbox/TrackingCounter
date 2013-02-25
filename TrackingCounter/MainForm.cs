@@ -92,6 +92,7 @@ namespace TrackingCounter
             _selectedDevice.StartCapture();
 
             _packetCount = 0;
+            lblTrackingCount.Text = "0";
         }
 
         private void SelectedDevice_OnPacketArrival(object sender, CaptureEventArgs e)
