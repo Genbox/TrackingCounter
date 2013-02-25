@@ -19,10 +19,8 @@ namespace TrackingCounter
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Retrieve the device list
             CaptureDeviceList devices = CaptureDeviceList.Instance;
 
-            // If no devices were found print an error
             if (devices.Count >= 1)
             {
                 int bestCandidate = 0;
@@ -35,6 +33,7 @@ namespace TrackingCounter
                         cbDevices.Items.Add(new DeviceWrapper(captureDevice));
 
                         string gateway = captureDevice.Interface.GatewayAddress == null ? string.Empty : captureDevice.Interface.GatewayAddress.ToString();
+
                         if (!string.IsNullOrEmpty(gateway) && gateway != "0.0.0.0")
                             bestCandidate = counter;
 
