@@ -61,18 +61,18 @@
             // 
             // lblTrackingCount
             // 
-            this.lblTrackingCount.AutoSize = true;
             this.lblTrackingCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrackingCount.Location = new System.Drawing.Point(138, 69);
+            this.lblTrackingCount.Location = new System.Drawing.Point(0, 71);
             this.lblTrackingCount.Name = "lblTrackingCount";
-            this.lblTrackingCount.Size = new System.Drawing.Size(29, 31);
+            this.lblTrackingCount.Size = new System.Drawing.Size(288, 31);
             this.lblTrackingCount.TabIndex = 3;
             this.lblTrackingCount.Text = "0";
+            this.lblTrackingCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 45);
+            this.label2.Location = new System.Drawing.Point(87, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 4;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(121, 115);
+            this.label3.Location = new System.Drawing.Point(113, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbDevices);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Registrerings tæller";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
